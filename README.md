@@ -8,17 +8,25 @@ It generally makes sense to run this in screen or tmux.
 
 1. Reserve a node:
 
+```
 srun -c 32 --mem 128G --tmp 100G --pty bash 
+```
 
 Once this is running:
 
-2. Get IP address of node:
+2. Clone this repository:
+
+```
+git clone https://github.com/reslp/jupyterhub-singularity.git
+```
+
+3. Get IP address of node:
 
 ```
 ip addr
 ```
 
-3. Run Jupyter Hub:
+4. Run Jupyter Hub:
 
 ```
 singularity exec -B $(pwd) -B $(pwd)/homes:/data/homes docker://reslp/jupyter-hub:5.2.1 jupyterhub
