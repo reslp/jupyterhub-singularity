@@ -30,7 +30,10 @@ ip addr
 
 ```
 singularity exec -B $(pwd) -B $(pwd)/homes:/data/homes docker://reslp/jupyter-hub:5.2.1 jupyterhub
+# with R and some additional packages installed:
+singularity exec -B $(pwd) -B $(pwd)/homes:/data/homes docker://reslp/jupyter-hub:5.2.1-rkernel jupyterhub
 ```
+
 
 This commands need to be run inside the folder with the homes directory and the `jupyterhub_config.py` file.
 
